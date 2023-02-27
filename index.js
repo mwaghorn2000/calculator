@@ -36,6 +36,7 @@ function appendNumber(num) {
 }
 
 function appendPoint() {
+  if (currentScreen.textContent.includes(".")) return;
   currentScreen.textContent += ".";
 }
 
