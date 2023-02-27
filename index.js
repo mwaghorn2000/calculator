@@ -118,3 +118,6 @@ function operate(operator, a, b) {
       return null;
   }
 }
+
+year = document.getElementById("year");
+year.textContent = new Date().getFullYear();
