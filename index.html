@@ -5,32 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
     <title>Calculator</title>
   </head>
   <body>
     <div class="calculator">
       <div class="screen">
-        <p>0</p>
+        <div id="old-screen"></div>
+        <div id="current-screen"></div>
       </div>
       <div class="buttons">
-        <button id="7">7</button>
-        <button id="8">8</button>
-        <button id="9">9</button>
-        <button id="4">4</button>
-        <button id="5">5</button>
-        <button id="6">6</button>
-        <button id="3">3</button>
-        <button id="2">2</button>
-        <button id="1">1</button>
-        <button id="operator">+</button>
-        <button id="0 number">0</button>
-        <button id="operator">-</button>
-        <button id="operator">*</button>
-        <button id="operator">/</button>
-        <button id="equals">=</button>
-        <button id="operator">C</button>
+        <button class="btn" id="clear">Clear</button>
+        <button class="btn" id="delete">Delete</button>
+
+        <button class="btn" data-number>7</button>
+        <button class="btn" data-number>8</button>
+        <button class="btn" data-number>9</button>
+        <button class="btn" data-operator>&divide</button>
+
+        <button class="btn" data-number>4</button>
+        <button class="btn" data-number>5</button>
+        <button class="btn" data-number>6</button>
+        <button class="btn" data-operator>x</button>
+
+        <button class="btn" data-number>3</button>
+        <button class="btn" data-number>2</button>
+        <button class="btn" data-number>1</button>
+        <button class="btn" data-operator>-</button>
+
+        <button class="btn" id="point">.</button>
+        <button class="btn" data-number>0</button>
+        <button class="btn" id="equal-button">=</button>
+        <button class="btn" data-operator>+</button>
       </div>
     </div>
+    <footer>
+      <p>
+        Copywrite &copy; 2023 Mitchell Waghorn
+        <a href="https://github.com/mwaghorn2000">
+          <i class="devicon-github-original colored"></i>
+        </a>
+      </p>
+    </footer>
   </body>
   <script src="./index.js"></script>
 </html>
