@@ -28,6 +28,8 @@ deleteButton.addEventListener("click", () => deleteDigit());
 
 pointButton.addEventListener("click", () => appendPoint());
 
+window.addEventListener("keypress", (e) => filterKeyPress(e));
+
 function appendNumber(num) {
   if (currentScreen.textContent === "0" || reset) {
     resetScreen();
@@ -46,7 +48,7 @@ function resetScreen() {
 }
 
 function clear() {
-  currentScreen.textContent = "";
+  currentScreen.textContent = "0";
   oldScreen.textContent = "";
   firstOperator = "";
   secondOperator = "";
@@ -69,7 +71,10 @@ function setOperator(operator) {
 
 function evaluate() {
   if (currentOperator === null || reset) return;
-  if (currentOperator === "/" && currentScreen === "0") {
+  if (
+    currentOperator === "÷" &&
+    (currentScreen.textContent === "0" || currentScreen.textContent === ".")
+  ) {
     alert("You cannot divide by 0!");
     return;
   }
@@ -79,6 +84,26 @@ function evaluate() {
   );
   oldScreen.textContent = `${firstOperator} ${currentOperator} ${secondOperator} =`;
   currentOperator = null;
+}
+
+function filterKeyPress(e) {
+  let keypress = e.key;
+
+  if (keypress === "/" || keypress === "\\") {
+    keypress = "÷";
+  } else if (keypress === "*") {
+    keypress = "x";
+  }
+
+  if (parseInt(keypress) || keypress === "." || keypress === "0") {
+    appendNumber(keypress);
+  } else if (symbols.includes(keypress)) {
+    setOperator(keypress);
+  } else if (keypress === "=" || keypress === "Enter") {
+    evaluate();
+  } else if (keypress === "c" || keypress === "C") {
+    clear();
+  }
 }
 
 function roundResult(number) {
