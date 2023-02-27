@@ -7,6 +7,7 @@ const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator]");
 const equalsButton = document.getElementById("equal-button");
 const clearButton = document.getElementById("clear");
+const deleteButton = document.getElementById("delete");
 const oldScreen = document.getElementById("old-screen");
 const currentScreen = document.getElementById("current-screen");
 
@@ -21,6 +22,8 @@ operatorButtons.forEach((button) => {
 equalsButton.addEventListener("click", () => evaluate());
 
 clearButton.addEventListener("click", () => clear());
+
+deleteButton.addEventListener("click", () => deleteDigit());
 
 function appendNumber(num) {
   if (currentScreen.textContent === "0" || reset) {
@@ -42,6 +45,12 @@ function clear() {
   firstOperator = "";
   secondOperator = "";
   currentOperator = null;
+}
+
+function deleteDigit() {
+  let str = currentScreen.textContent;
+  str = str.slice(0, str.length - 1);
+  currentScreen.textContent = str;
 }
 
 function setOperator(operator) {
