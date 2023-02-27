@@ -88,6 +88,7 @@ function evaluate() {
 
 function filterKeyPress(e) {
   let keypress = e.key;
+  let symbols = ["+", "-", "x", "÷"];
 
   if (keypress === "/" || keypress === "\\") {
     keypress = "÷";
