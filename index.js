@@ -8,6 +8,7 @@ const operatorButtons = document.querySelectorAll("[data-operator]");
 const equalsButton = document.getElementById("equal-button");
 const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
+const pointButton = document.getElementById("point");
 const oldScreen = document.getElementById("old-screen");
 const currentScreen = document.getElementById("current-screen");
 
@@ -25,6 +26,8 @@ clearButton.addEventListener("click", () => clear());
 
 deleteButton.addEventListener("click", () => deleteDigit());
 
+pointButton.addEventListener("click", () => appendPoint());
+
 function appendNumber(num) {
   if (currentScreen.textContent === "0" || reset) {
     resetScreen();
@@ -32,7 +35,9 @@ function appendNumber(num) {
   currentScreen.textContent += num;
 }
 
-function appendOperator(operator) {}
+function appendPoint() {
+  currentScreen.textContent += ".";
+}
 
 function resetScreen() {
   currentScreen.textContent = "";
