@@ -10,4 +10,4 @@ Simple calculator app which does what calculators do. Calculate
 
 ## Live demo
 
-[Click Here!](google.com)
+[Click Here!](https://mwaghorn2000.github.io/calculator/)
