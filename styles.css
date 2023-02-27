@@ -70,7 +70,7 @@ body {
     background-color: #e3e2e2;
 }
 
-.btn[data-operator], .btn[data-operator]:active {
+.btn[data-operator]{
     background-color: #f6f8af;
 }
 
@@ -78,7 +78,11 @@ body {
     background-color: #fcff96;
 }
 
-#equal-button, #equal-button:active {
+.btn[data-operator]:active {
+    background-color: #f6f8af;
+}
+
+#equal-button {
     background-color: #a4a1f1;
 }
 
@@ -86,11 +90,15 @@ body {
     background-color: #aaa8ff;
 }
 
+#equal-button:active {
+    background-color: #a4a1f1;
+}
+
 #clear, #delete {
     width: 49%;
 }
 
-#clear, #clear:active {
+#clear {
     background-color: #ff918f;
 }
 
@@ -98,12 +106,20 @@ body {
     background-color: #ff7876;
 }
 
-#delete, #delete:active{
+#clear:active {
+    background-color: #ff918f;
+}
+
+#delete {
     background-color: #97a3ff;
 }
 
 #delete:hover {
     background-color: #7887ff;
+}
+
+#delete:active {
+    background-color: #97a3ff;
 }
 
 
