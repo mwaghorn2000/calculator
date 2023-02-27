@@ -88,6 +88,7 @@ function evaluate() {
 
 function filterKeyPress(e) {
   let keypress = e.key;
+  console.log(keypress);
   let symbols = ["+", "-", "x", "÷"];
 
   if (keypress === "/" || keypress === "\\") {
@@ -104,6 +105,8 @@ function filterKeyPress(e) {
     evaluate();
   } else if (keypress === "c" || keypress === "C") {
     clear();
+  } else if (keypress === "Backspace") {
+    deleteDigit();
   }
 }
 
