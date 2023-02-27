@@ -28,7 +28,7 @@ deleteButton.addEventListener("click", () => deleteDigit());
 
 pointButton.addEventListener("click", () => appendPoint());
 
-window.addEventListener("keypress", (e) => filterKeyPress(e));
+window.addEventListener("keydown", (e) => filterKeyPress(e));
 
 function appendNumber(num) {
   if (currentScreen.textContent === "0" || reset) {
